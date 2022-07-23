@@ -25,7 +25,7 @@ data_filter <- subset(data_raw, Date == "1/2/2007" | Date == "2/2/2007", select 
 data_filter$date_time <- paste(data_filter$Date, data_filter$Time, sep="-")
 data_filter$date_time <- strptime(data_filter$date_time, format = "%d/%m/%Y-%H:%M:%S")
 
-# 4. Open png-creation with the histogram as input and close the connection afterwards
+# 4. Open png-creation with the plot as input and close the connection afterwards
 
 png(filename = "plot2.png", width = 480, height = 480)
 plot(data_filter$date_time, data_filter$Global_active_power, xlab = "", ylab = "Global Active Power", type = "l")
